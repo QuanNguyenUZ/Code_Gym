@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xóa phần tử V khỏi mảng<</title>
+</head>
+<body>
+<h3>Kết quả</h3>
+<div id="result"></div>
+<script>
+    let arr = [3, 7, 2, 9, 10, 5, 8, 1, 6, 4];
+    let V = parseInt(prompt("Nhập số nguyên V: "));
+    // Tìm vị trí của V trong mảng
+    let index = arr.indexOf(V);
+    if (index !== -1) {
+        // Dịch trái các phần tử phía sau
+        for (let i = index; i < arr.length - 1; i++) {
+            arr[i] = arr[i + 1];
+        }
+        // Gán 0 cho phần tử cuối
+        arr[arr.length - 1] = 0;
+        document.getElementById("result").innerHTML =
+            "Mảng sau khi xóa " + V + ": [" + arr.join(", ") + "]";
+    } else {
+        document.getElementById("result").innerHTML = "Số " + V + " không có trong mảng.";
+    }
+</script>
+</body>
+</html>

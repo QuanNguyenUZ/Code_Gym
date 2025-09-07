@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>Tính thuế thu nhập cá nhân</h2>
+
+<p>Thu nhập (VND):
+    <input type="number" id="income">
+</p>
+<button onclick="tinhThue()">Tính thuế</button>
+
+<p id="result"></p>
+
+<script>
+    function tinhThue() {
+        let income = parseFloat(document.getElementById("income").value);
+        let thue = 0;
+        if (isNaN(income) || income <= 0) {
+            document.getElementById("result").innerHTML = "Vui lòng nhập thu nhập hợp lệ!";
+            return;
+        }
+        if (income <= 5000000) {
+            thue = income * 0.05;
+        } else if (income <= 10000000) {
+            thue = income * 0.10;
+        } else {
+            thue = income * 0.20;
+        }
+        document.getElementById("result").innerHTML =
+            "Thuế phải nộp: " + thue.toLocaleString('vi-VN') + " VND";
+    }
+</script>
+</body>
+</html>

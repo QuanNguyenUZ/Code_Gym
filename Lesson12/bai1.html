@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Đếm số nguyên lớn hơn hoặc bằng 10</h3>
+<div id="result"></div>
+<script>
+    let arr = [1 ,2, 4, 7, 9, 12, 19, 29, 35];
+    let count = 0;
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] >= 10){
+            count++;
+        }
+    }
+    document.getElementById("result").innerHTML =   "Mảng: [" + arr.join(", ") + "]<br>" +
+        "Có " + count + " số nguyên lớn hơn hoặc bằng 10.";
+</script>
+</body>
+</html>

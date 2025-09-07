@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm số nguyên âm trong một mảng.</title>
+</head>
+<body>
+<div id="result"></div>
+<script>
+    let arr = [3, -7, 5, -1, 0, -9, 8, -4, 12];
+    let count = 0;
+    for (let num of arr){
+        if(num < 0){
+            count++;
+        }
+    }
+    document.getElementById("result").innerHTML =
+        "Mảng: [" + arr.join(", ") + "]<br>" +
+        "Số lượng số nguyên âm: " + count;
+</script>
+</body>
+</html>

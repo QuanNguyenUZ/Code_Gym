@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nâng cấp game "Hãy thử đoán xem!"</title>
+</head>
+<body>
+<input type="button" id="check" value="Bắt đầu">
+<div id="result"></div>
+<script>
+    document.getElementById("check").addEventListener("click", function () {
+        let min = parseInt(prompt("Nhập số bạn muốn đoán trong khoảng từ:"));
+        let max = parseInt(prompt("Nhập số bạn muốn đoán trong khoảng đến:"));
+        if (isNaN(min) || isNaN(max) || min >= max) {
+            alert("Khoảng không hợp lệ!");
+            return;
+        }
+        let randomNumber = parseInt(Math.random() * (max - min + 1)) + min;
+       let time = 3;
+       let guessed = false;
+       for (let i = 1; i <= time; i++) {
+           let guess = parseInt(prompt("Nhập số bạn đoán"));
+           if (guess === randomNumber) {
+               alert("Chúc mừng bạn đã đoán trúng số")
+               guessed = true;
+               break;
+           } else if (guess < randomNumber) {
+               alert("Thua rồi, số bạn đoán nhỏ hơn")
+           } else{
+               elert("Thua rồi, số bạn đoán lớn hơn")
+           }
+       }
+       if(!guessed){
+       alert("Hết lượt, số đúng là: " + randomNumber);
+       }
+    })
+</script>
+</body>
+</html>
+<!--1. Thiết kế giao diện: Giao diện chỉ gồm 1 Button "Chơi": cho phép người dùng bắt đầu
+chơi hoặc chơi lại-->
+
+<!--2. Mô tả ứng dụng: Khi người dùng nhấn vào button “Chơi”:-->
+<!--Ứng dụng hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào-->
+<!--Ứng dụng chọn ra số ngẫu nhiên trong khoảng mà ngườI dùng chọn-->
+<!--Ứng dụng hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán-->
+<!--Ứng dụng lấy kết quả và so sánh với giá trị ngẫu nhiên.-->
+<!--Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi-->
+<!--Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng
+lựa chọn lại.-->
+<!--Chú ý: Người dùng chỉ được lựa chọn tối đa ba lần-->

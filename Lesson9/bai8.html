@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Kiểm tra tuổi hợp lệ</h3>
+<p>Nhập tuổi: <input type="number" id="age"></p>
+<button onclick="kiemTraTuoi()">Kiểm tra</button>
+<p id="result"></p>
+<script>
+    function kiemTraTuoi() {
+        let age = parseFloat(document.getElementById("age").value);
+        let kq = "";
+        if (isNaN(age)) {
+            kq = "Vui lòng nhập số!";
+        } else if (!Number.isInteger(age)) {
+            kq = "Tuổi phải là số nguyên.";
+        } else if (age > 0 && age < 120) {
+            kq = age + " là tuổi hợp lệ của một người.";
+        } else {
+            kq = age + " không phải là tuổi hợp lệ.";
+        }
+        document.getElementById("result").innerHTML = kq;
+    }
+</script>
+</body>
+</html>

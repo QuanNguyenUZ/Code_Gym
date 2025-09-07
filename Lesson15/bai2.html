@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Hàm tính diện tích hình tròn
+    function dienTichHinhTron(r) {
+        return Math.PI * r * r;
+    }
+    // Hàm tính chu vi hình tròn
+    function chuViHinhTron(r) {
+        return 2 * Math.PI * r;
+    }
+    let r = parseFloat(prompt("Nhập bán kính hình tròn:"));
+    let S = dienTichHinhTron(r);
+    let C = chuViHinhTron(r);
+    document.write("Bán kính: " + r + "<br>");
+    document.write("Diện tích hình tròn: " + S.toFixed(2) + "<br>");
+    document.write("Chu vi hình tròn: " + C.toFixed(2));
+</script>
+</body>
+</html>

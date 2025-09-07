@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<b>Tra Từ Điển</b>
+<p>Nhập từ: <input type ="text" id ="tu"> <input type ="button" id = "check" value ="Tra"></p>
+
+<span id ="result"></span>
+<script>
+    document.getElementById("check").addEventListener("click", function() {
+        let eng = ["Red", "Green", "White", "Black"];
+        let vie = ["Đỏ", "Xanh", "Trắng", "Đen"]
+        let tu = document.getElementById("tu").value;
+        let tim = false;
+        for (let i = 0; i < eng.length; i++)
+        {if(tu === eng[i].toLowerCase()) {
+            document.getElementById("result").innerHTML = eng[i] + " : " + vie[i];
+            tim = true;
+            break;
+        }
+        }
+        if(!tim){
+        document.getElementById("result").innerHTML="Không tìm thấy"}
+        });
+</script>
+</body>
+</html>
+<!--Tạo giao diện web:-->
+<!--Tạo một form đơn giản để người dùng nhập từ cần tìm kiếm.-->
+<!--Viết mã JavaScript:-->
+<!--Tạo hai mảng có cùng độ dài để lưu trữ dữ liệu:-->
+<!--Mảng 1: Lưu trữ các từ tiếng Anh.-->
+<!--Mảng 2: Lưu trữ các từ tiếng Việt tương ứng.-->
+<!--Khi người dùng nhập từ:-->
+<!--Tìm vị trí của từ tiếng Anh trong mảng 1.-->
+<!--Nếu tìm thấy, hiển thị từ tiếng Việt tương ứng từ mảng 2.-->
+<!--Nếu không tìm thấy, hiển thị thông báo "Không tìm thấy".-->

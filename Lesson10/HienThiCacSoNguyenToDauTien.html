@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<h3>Ứng dụng hiển thị số nguyên tố</h3>
+<input type="text" id="numbers" placeholder="Nhập số lượng số nguyên tố">
+<button onclick="hienThi()">Hiển thị</button>
+<p id="result"></p>
+<script>
+    function hienThi() {
+        let numbers = parseInt(document.getElementById("numbers").value);
+        let count = 0;
+        let N = 2;
+        let result = "";
+        while (count < numbers) {
+            let check = true;
+            for (let i = 2; i <= Math.sqrt(N); i++) {
+                if (N % i === 0) {
+                }
+            }
+            if (check === true) {
+                result += N + " ";
+                count++;
+            } else {
+            }
+            N++;
+        }
+        document.getElementById("result").innerHTML = "Các số nguyên tố: " + result;
+    }
+</script>
+</body>
+</html>

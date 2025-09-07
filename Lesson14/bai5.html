@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let ngoiSao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let chomSao = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    function timChomSao(tenNgoisao){
+        for (let i = 0; i < ngoiSao.length; i++) {
+            if (ngoiSao[i].toLowerCase() === tenNgoisao.toLowerCase()) {
+                return chomSao[i];
+            }
+        }
+        return null;
+    }
+    let nhap = prompt("Nhập ngôi sao: ");
+    let ketQua = timChomSao(nhap);
+    if (ketQua !== null) {
+        document.write("Ngôi sao " + nhap + " thuộc chòm sao: " + ketQua);
+    } else {
+        document.write("Không tìm thấy ngôi sao '" + nhap + "'");
+    }
+       // let ngoiSao = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+       // let chomSao = ["Ursa Minor", "Taurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+       // function timChomSao(tenNgoisao){
+       //     for (let i = 0; i < ngoiSao.length; i++) {
+       //         if(ngoiSao[i] === tenNgoisao){
+       //             return chomSao[i];
+       //         }
+       //     }
+       //     return null;
+       // }
+       // let nhap = prompt("Nhập ngôi sao: ")
+       // let ketQua = timChomSao(nhap);
+       // if(ketQua !== null){
+       //          document.write = ngoiSao + "thuộc chòm sao: " + chomSao;
+       //      } else {
+       //          document.write= "Không tìm thấy";
+       //  }
+</script>
+</body>
+</html>

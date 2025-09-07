@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo hàm nhận vào hai tham số:</title>
+</head>
+<body>
+<h2>Ví dụ hàm so sánh và tính tổng</h2>
+<script>
+    function compareAndSum(a, b) {
+        if (a > b) {
+            alert("Tham số thứ nhất lớn hơn tham số thứ hai! Vui lòng nhập lại");
+            a = prompt("Nhập số a");
+            b = prompt("Nhập số b")
+            return compareAndSum(a, b);
+        } else {
+            return a + b;
+        }
+    }
+    let x = prompt("nhập số a");
+    let y = prompt("Nhập số b")
+    let result = compareAndSum(x, y);
+    if (x <= y) {
+        document.write("Tổng của " + x + " và " + y + " là: " + result);
+    }
+</script>
+</body>
+</html>

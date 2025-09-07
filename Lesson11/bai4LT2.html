@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let rows = 6;  // chiều cao
+    let cols = 20; // chiều rộng
+    let rectangle = "";
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            // Nếu ở dòng đầu, dòng cuối hoặc cột đầu, cột cuối
+            if (i === 0 || i === rows - 1 || j === 0 || j === cols - 1) {
+                rectangle += "*";
+            } else {
+                rectangle += " "; // khoảng trắng bên trong
+            }
+        }
+        rectangle += "\n"; // xuống dòng
+    }
+    console.log(rectangle);
+</script>
+</body>
+</html>

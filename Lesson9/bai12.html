@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính lãi ngân hàng (lãi mẹ đẻ lãi con)</h2>
+<table>
+    <tr><td>Số tiền ban đầu (VND):</td>
+    <td><input type="number" id="principal"></td>
+</tr>
+    <tr>
+        <td>Số tháng gửi:</td>
+    <td><input type="number" id="months"></td>
+    </tr>
+    <tr>
+<td>Lãi suất hàng tháng (%):</td>
+    <td><input type="number" id="rate"></td>
+    </tr>
+<tr><td></td>
+    <td><button onclick="tinhLai()">Tính</button></td></tr>
+<tr>
+    <td colspan="2"><p id="result"></p></td></tr>
+<script>
+    function tinhLai() {
+        let principal = parseFloat(document.getElementById("principal").value);
+        let months = parseInt(document.getElementById("months").value);
+        let rate = parseFloat(document.getElementById("rate").value) / 100; // chuyển % thành số thập phân
+
+        if (isNaN(principal) || isNaN(months) || isNaN(rate) || principal <= 0 || months <= 0 || rate < 0) {
+            document.getElementById("result").innerHTML = "Vui lòng nhập dữ liệu hợp lệ!";
+            return;
+        }
+        // Công thức lãi kép
+        let amount = principal * Math.pow((1 + rate), months);
+        let interest = amount - principal;
+
+        document.getElementById("result").innerHTML =
+            "Sau " + months + " tháng, tổng số tiền là: " + amount.toLocaleString('vi-VN') + " VND<br>" +
+            "Tiền lãi: " + interest.toLocaleString('vi-VN') + " VND";
+    }
+</script>
+</table>
+</body>
+</html>

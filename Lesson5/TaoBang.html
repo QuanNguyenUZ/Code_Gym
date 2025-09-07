@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table, td, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td{
+        padding: 5px;
+        text-align: left;
+    }
+    tr:nth-child(even){background-color: #f2f2f2;}
+    tr:nth-child(odd) {
+        background-color:#fff;}
+    th {
+        background-color: black;
+        color: white;
+    }
+
+</style>
+<body>
+<table style="width:100%">
+    <tr>
+        <th>Quý</th>
+        <th>Tháng</th>
+        <th>Doanh thu</th>
+    </tr>
+    <tr class="cot">
+        <td rowspan="3"> Một</td>
+        <td>Một</td>
+        <td>100$</td>
+    </tr>
+    <tr>
+        <td>Hai</td>
+        <td>200$</td>
+    </tr>
+    <tr>
+        <td>Ba</td>
+        <td>200$</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Ba </td>
+        <td>Bốn </td>
+        <td>100$</td>
+    </tr>
+    <tr>
+        <td>Năm</td>
+        <td>200$</td>
+    </tr>
+    <tr>
+        <td>Sáu</td>
+        <td>200$</td>
+</table>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập số nguyên dương:"));
+    let factorial = 1;
+
+    if (n < 0) {
+        console.log("Không có giai thừa cho số âm!");
+    } else {
+        for (let i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        console.log(n + "! = " + factorial);
+    }
+</script>
+</body>
+</html>

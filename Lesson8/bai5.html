@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp loại học lực</title>
+</head>
+<body>
+<b>Xếp loại học lực dựa trên thang điểm</b>
+<p>Bài kiểm tra: <input type="text" id = "bkt"></p>
+<p>Thi Giữa Kì: <input type="text" id = "tgk"></p>
+<p>Thi Cuối kì: <input type="text" id = "tck"></p>
+<input type="button" id="check" value="Kiểm tra"></p>
+<br><br>
+<span id="result"></span>
+</body>
+</html>
+<script>
+    document.getElementById("check").addEventListener("click", function() {
+        let bkt = parseFloat(document.getElementById("bkt").value);
+        let tgk = parseFloat(document.getElementById("tgk").value);
+        let tck = parseFloat(document.getElementById("tck").value);
+        let dtb = (bkt + tgk + tck)/3;
+        document.getElementById("result").innerHTML = "Điểm trung bình: "+ dtb.toFixed(1);
+      if(isNaN(dtb) || dtb < 0){
+          document.getElementById("result").innerHTML = "Vui lòng nhập số"}
+        else if(dtb >= 8){
+            document.getElementById("result").innerHTML += " Loại Giỏi"}
+            else if( dtb >= 6.5){
+            document.getElementById("result").innerHTML += " Loại Khá"}
+            else if( dtb >= 5){
+            document.getElementById("result").innerHTML += " Loại Trung Bình"}
+            else if( dtb >= 3.5){
+                document.getElementById("result").innerHTML += " Loại Yếu"}
+else {
+            document.getElementById("result").innerHTML += " Loại yếu"
+        }})
+
+
+
+
+</script>

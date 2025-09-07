@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        let  str = prompt("Nhập chuỗi")
+        let result = "";
+        for(let string of str){
+            if(string === string.toLowerCase()) {
+                result += string.toUpperCase();
+            }else {
+                result += string.toLowerCase();
+            }
+    }
+    document.write(result);
+</script>
+</body>
+</html>

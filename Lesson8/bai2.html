@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập tuổi kiểm tra đủ điều kiện vào lớp 10 hay không</title>
+</head>
+<body>
+<b>Nhập tuổi kiểm tra đủ điều kiện vào lớp 10 hay không</b>
+<p>Nhập tuổi: <input type="text" id = "tuoi">
+    <input type="button" id="check" value="Kiểm tra"></p>
+<br><br>
+<span id="result"></span>
+</body>
+</html>
+<script>
+    document.getElementById("check").addEventListener("click", function() {
+        let tuoi = parseFloat(document.getElementById("tuoi").value);
+        if (isNaN(tuoi)) {
+            document.getElementById("result").innerHTML = "Không phải là số";
+        } else if(tuoi >= 16) {
+            document.getElementById("result").innerHTML = "Đủ tuổi ";
+        }
+        else{
+            document.getElementById("result").innerHTML = "Không đủ tuổi"
+        }
+    });
+
+</script>

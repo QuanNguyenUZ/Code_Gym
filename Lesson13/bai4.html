@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số từ trong chuỗi</title>
+</head>
+<body>
+</body>
+    <script>
+        let str = prompt("Nhập chuỗi bất kì: ")
+        let count = 0;
+        let inWord = false; // cờ kiểm tra đang trong 1 từ
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] !== " " && str[i] !== "\t" && str[i] !== "\n") {
+                if (!inWord) {
+                    count++;   // bắt đầu một từ mới
+                    inWord = true;
+                }
+            } else {
+                inWord = false; // gặp khoảng trắng -> kết thúc từ
+            }
+        }
+        alert("Chuỗi có " + count + " từ.");
+    </script>
+</html>

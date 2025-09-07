@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra phần tử V trong mảng</title>
+</head>
+<body>
+<div id="result"></div>
+</body>
+<script>
+    let arr = [3, 7, 5, 1, 0, 9, 8, 4, 12];
+    let v = parseInt(prompt("Nhập số nguyên V: "));
+    let found = false;
+    for (let i = 0; i < arr.length; i++) {
+        if (v === arr[i]) {
+            found = true;
+            break;
+        }
+    }
+    if (found) {
+        document.getElementById("result").innerHTML = v + " is in the array";
+    } else {
+        document.getElementById("result").innerHTML = v + " is not in the array";
+    }
+</script>
+</html>

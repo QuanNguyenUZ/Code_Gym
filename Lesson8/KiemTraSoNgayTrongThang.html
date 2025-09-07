@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<b>Kiểm tra số ngày trong tháng</b>
+<br>
+<br>
+<input type="text" id="thang" placeholder="Nhập tháng">
+<input type="button" id="check" value="Tính số ngày">
+<br><span id="result"></span>
+</body>
+</html>
+<script>
+    document.getElementById("check").addEventListener("click", function() {
+        let thang = parseInt(document.getElementById("thang").value);
+        let result = "";
+
+        if (isNaN(thang) || thang < 1 || thang > 12) {
+            result = "Vui lòng nhập số tháng từ 1 đến 12!";
+        } else {
+            switch (thang) {
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    result = "Tháng " + thang + " có 31 ngày";
+                    break;
+                case 4: case 6: case 9: case 11:
+                    result = "Tháng " + thang + " có 30 ngày";
+                    break;
+                case 2:
+                    result = "Tháng 2 có 28 hoặc 29 ngày";
+                    break;
+            }
+        }
+        document.getElementById("result").innerText = result;
+    });
+</script>

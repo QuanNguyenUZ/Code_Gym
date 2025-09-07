@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<b>Kiểm tra a có chia hết cho b không</b>
+<br><br>
+Nhập a: <input type="number" id="a" placeholder="Số a">
+<br><br>
+Nhập b: <input type="number" id="b" placeholder="Số b">
+<br><br>
+<input type="button" id="check" value="Kiểm tra">
+<br><br>
+<span id="result"></span>
+</body>
+</html>
+<script>
+    document.getElementById("check").addEventListener("click", function() {
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+        let result = "";
+
+        if (isNaN(a) || isNaN(b)) {
+            result = "Vui lòng nhập cả hai số!";
+        } else if (b === 0) {
+            result = "Không thể chia cho 0!";
+        } else {
+            if (a % b === 0) {
+                result = a + " chia hết cho " + b;
+            } else {
+                result = a + " không chia hết cho " + b;
+            }
+        }
+        document.getElementById("result").innerText = result;
+    });
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Tính tiền điện theo số kWh tiêu thụ</h3>
+<p>Nhập số kWh: <input type="number" id="kwh"></p>
+<button onclick="tinhTienDien()">Tính tiền điện</button>
+<p id="result"></p>
+<script>
+    function tinhTienDien() {
+        let kwh = parseFloat(document.getElementById("kwh").value);
+        let tien = 0;
+        if (isNaN(kwh) || kwh < 0) {
+            document.getElementById("result").innerHTML = "Vui lòng nhập số kWh hợp lệ!";
+            return;
+        }
+        if (kwh <= 50) {
+            tien = kwh * 1600;
+        } else if (kwh <= 100) {
+            tien = 50 * 1600 + (kwh - 50) * 1700;
+        } else if (kwh <= 200) {
+            tien = 50 * 1600 + 50 * 1700 + (kwh - 100) * 2000;
+        } else if (kwh <= 300) {
+            tien = 50 * 1600 + 50 * 1700 + 100 * 2000 + (kwh - 200) * 2500;
+        } else if (kwh <= 400) {
+            tien = 50 * 1600 + 50 * 1700 + 100 * 2000 + 100 * 2500 + (kwh - 300) * 2800;
+        } else {
+            tien = 50 * 1600 + 50 * 1700 + 100 * 2000 + 100 * 2500 + 100 * 2800 + (kwh - 400) * 2900;
+        }
+        document.getElementById("result").innerHTML =
+            "Số tiền điện phải trả: " + tien.toLocaleString("vi-VN") + " VND";
+    }
+    </script>
+</body>
+</html>

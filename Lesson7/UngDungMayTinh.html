@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+            <input type="text" id="number1" >
+            <input type="text" id="number2" >
+      <br><br>
+        <input type="button" id="Addition" value="Addition(+)">
+        <input type="button" id="Subtraction" value="Subtraction(-)" >
+        <input type="button" id="Multiplication" value="Multiplication(*)" >
+        <input type="button" id="Division" value="Division(/)" >
+    <br>
+        <span id="result"></span>
+</form>
+</body>
+</html>
+<script>
+    document.getElementById("Addition").addEventListener('click', () => {
+        let a = parseFloat(document.getElementById("number1").value);
+        let b = parseFloat(document.getElementById("number2").value);
+        document.getElementById("result").innerHTML = `${a+b}`;
+    })
+    document.getElementById("Subtraction").addEventListener('click', () => {
+        let a = parseFloat(document.getElementById("number1").value);
+        let b = parseFloat(document.getElementById("number2").value);
+        document.getElementById("result").innerHTML = `${a-b}`;
+    })
+    document.getElementById("Multiplication").addEventListener('click', () => {
+        let a = parseFloat(document.getElementById("number1").value);
+        let b = parseFloat(document.getElementById("number2").value);
+        document.getElementById("result").innerHTML = `${a*b}`;
+    })
+    document.getElementById("Division").addEventListener('click', () => {
+        let a = parseFloat(document.getElementById("number1").value);
+        let b = parseFloat(document.getElementById("number2").value);
+        document.getElementById("result").innerHTML = `${a/b}`;
+    })
+
+</script>

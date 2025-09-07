@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính hoa hồng nhận được dựa trên mức doanh số bán hàng</title>
+</head>
+<body>
+<b>Tính hoa hồng nhận được dựa trên mức doanh số bán hàng</b>
+<p>Doanh số bán hàng (vnd): <input type="text" id = "doanhso"></p>
+
+<input type="button" id="check" value="Kiểm tra"></p>
+<br><br>
+<span id="result"></span>
+</body>
+</html>
+<script>
+    document.getElementById("check").addEventListener("click", function() {
+        let doanhso = parseFloat(document.getElementById("doanhso").value);
+        let hoahong = 0;
+        if (isNaN(doanhso) || doanhso < 0) {
+            document.getElementById("result").innerHTML = "Vui lòng nhập số hợp lệ!";
+        } else {
+            if (doanhso < 5000000) {
+                hoahong = doanhso * 0.03; // 3%
+            } else if (doanhso < 10000000) {
+                hoahong = doanhso * 0.05; // 5%
+            } else {
+                hoahong = doanhso * 0.10; // 10%
+            }
+            document.getElementById("result").innerHTML = "Hoa hồng nhận được là: " + hoahong.toLocaleString("vi-VN") + " VND";}})
+</script>

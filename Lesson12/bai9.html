@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nối mảng</title>
+</head>
+<body>
+<div id="result"></div>
+<script>
+    let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let b = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    // // Tạo mảng c gồm 20 phần tử từ a và b
+     let c = [...a, ...b];  // hoặc: let c = a.concat(b);
+    document.getElementById("result").innerHTML =
+        "Mảng a: " + a.join(", ") + "<br>" +
+        "Mảng b: " + b.join(", ") + "<br>" +
+        "Mảng c (nối từ a và b): " + c.join(", ");
+</script>
+</body>
+</html>

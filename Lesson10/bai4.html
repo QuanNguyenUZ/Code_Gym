@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Số Fibonacci đầu tiên chia hết cho 5:</h3>
+<p id="result"></p>
+<script>
+    let so1 = 0;
+    let so2 = 1;
+    let soHienTai;
+    while (true) {
+        soHienTai = so1 + so2;
+        if (soHienTai % 5 === 0) {
+            document.getElementById("result").innerHTML = soHienTai;
+            break;
+        }
+        so1 = so2;
+        so2 = soHienTai;
+    }
+</script>
+</body>
+</html>

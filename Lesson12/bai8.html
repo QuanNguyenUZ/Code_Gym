@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sắp xếp mảng giảm dần</title>
+</head>
+<body>
+<div id="result"></div>
+<script>
+    let arr = [5, 12, 3, 9, 1, 7, 8, 15, 4, 10];
+    arr.sort(function(a, b) {
+        return b - a;   // nếu b > a thì đổi chỗ
+    });
+    document.getElementById("result").innerHTML = "Mảng sau khi sắp xếp giảm dần: " + arr.join(", ");
+</script>
+</body>
+</html>

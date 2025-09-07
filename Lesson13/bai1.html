@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="result"></div>
+<script>
+    let a = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+    let output = "";
+    for (let i = 0; i < a.length; i++) {
+        output += "row " + i + "<br>";  // In ra row i
+        for (let j = 0; j < a[i].length; j++) {
+            output += " " + a[i][j] + "<br>";  // In ra từng phần tử trong row
+        }
+    }
+    document.getElementById("result").innerHTML = output;
+
+</script>
+</body>
+</html>

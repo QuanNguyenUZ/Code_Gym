@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPrime(number) {
+        if (number < 2)
+            return false;
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    let input = prompt("Nhập một số để kiểm tra:");
+    let num = parseInt(input);
+    if (isPrime(num)) {
+        alert(num + " là số nguyên tố");
+    } else {
+        alert(num + " không phải là số nguyên tố");
+    }
+    let primes = [];
+    for (let i = 2; i < 10000; i++) {
+        if (isPrime(i)) {
+            primes.push(i);
+        }
+    }
+    document.write(" Các số nguyên tố nhỏ hơn 10000 là:"+"</br>" + primes.join("</br>"));
+</script>
+</body>
+</html>

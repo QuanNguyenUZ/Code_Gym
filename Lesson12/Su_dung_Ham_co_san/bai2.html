@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chèn dấu "-" giữa các số chẵn</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập chuỗi số")
+        let result = "";
+        for (let i = 0; i < str.length; i++) {
+            result += str[i];
+            if( str[i] % 2 === 0 && str[i+1]%2===0){
+                result += "-"
+            }
+    }
+document.write(result);
+
+</script>
+</body>
+</html>

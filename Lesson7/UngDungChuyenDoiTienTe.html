@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency	</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="amount" name="amount"></td>
+        <td>
+            <select id="fromCurrency">
+            <option value="1">VND</option>
+            <option value="2">USD</option>
+        </select></td>
+        <td>
+            <select id="toCurrency" name="toCurrency">
+                <option value="2">USD</option>
+                <option value="1">VND</option>
+            </select>
+        </td>
+        <td>
+            <input type="button" id="Convert" value="Convert">
+        </td>
+
+    </tr>
+    <tr>
+        <td><span id="result"></span></td>
+    </tr>
+</table>
+</body>
+</html>
+<script>
+    document.getElementById("Convert").addEventListener("click", function() {
+        let fromCurrency = document.getElementById("fromCurrency");
+        let toCurrency = document.getElementById("toCurrency");
+        let amount = document.getElementById("amount");
+        if (amount.value < 0) {
+            document.getElementById("result").innerHTML = "Vui lòng nhập số tiền hợp lệ"
+        }
+        else if (fromCurrency.value === "1" && toCurrency.value === "2") {
+            let result = amount.value / 23000;
+            document.getElementById("result").innerHTML = `Result: ${result} USD`;
+        }else if (fromCurrency.value === "2" && toCurrency.value === "1") {
+            let result = amount.value*23000;
+            document.getElementById("result").innerHTML = `Result: ${result} VND`;
+        }
+        else alert("Chọn lại loại tiền tệ");
+    })
+</script>

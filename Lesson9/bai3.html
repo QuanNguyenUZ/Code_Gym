@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình vuông khi biết cạnh a</title>
+</head>
+<body>
+<b>Tính diện tích hình vuông khi biết cạnh a</b>
+<p>Cạnh a: <input type="text" id = "canh"></p>
+<input type="button" id="check" value="Kiểm tra">
+<br><br>
+<span id="result"></span>
+</body>
+</html>
+<script>
+    document.getElementById("check").addEventListener("click", function() {
+        let canh = parseFloat(document.getElementById("canh").value);
+        let dientich = canh * canh;
+        if(isNaN(canh) || canh < 0){
+        document.getElementById("result").innerHTML ="Vui lòng nhập số"}
+    else{
+        document.getElementById("result").innerHTML = "Diện tích hình vuông là " + dientich }
+    })
+
+</script>
