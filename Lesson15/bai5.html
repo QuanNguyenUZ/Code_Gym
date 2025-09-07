@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Nhập 3 số nguyên để tìm số nhỏ nhất</h2>
+<label>Số 1: </label><input type="number" id="num1"><br><br>
+<label>Số 2: </label><input type="number" id="num2"><br><br>
+<label>Số 3: </label><input type="number" id="num3"><br><br>
+<button onclick="timMin()">Tìm số nhỏ nhất</button>
+<p id="ketqua"></p>
+<script>
+    function minOfThree(a, b, c) {
+        let min = a;
+        if (b < min) {
+            min = b;
+        }
+        if (c < min) {
+            min = c;
+        }
+        return min;
+    }
+    function timMin() {
+        let a = parseInt(document.getElementById("num1").value);
+        let b = parseInt(document.getElementById("num2").value);
+        let c = parseInt(document.getElementById("num3").value);
+        let kq = minOfThree(a, b, c);
+        document.getElementById("ketqua").innerHTML = "Số nhỏ nhất là: " + kq;
+    }
+</script>
+</body>
+</html>
+<!--Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.-->

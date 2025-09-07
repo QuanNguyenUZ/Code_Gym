@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Kiểm tra ký tự trong mảng</h2>
+<label>Nhập mảng ký tự (cách nhau bằng dấu phẩy): </label><br>
+<input type="text" id="arrayInput"><br><br>
+<label>Nhập ký tự cần kiểm tra: </label>
+<input type="text" id="charInput" maxlength="1"><br><br>
+<button onclick="kiemTra()">Kiểm tra</button>
+<p id="ketqua"></p>
+<script>
+    function countChar(arr, ch) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === ch) {
+                count++;
+            }
+        }
+        return count > 0 ? count : -1;
+    }
+    function kiemTra() {
+        let arr = document.getElementById("arrayInput").value.split(",");
+        let ch = document.getElementById("charInput").value;
+        let kq = countChar(arr, ch);
+        if (kq === -1) {
+            document.getElementById("ketqua").innerHTML = "Ký tự '" + ch + "' không có trong mảng.";
+        } else {
+            document.getElementById("ketqua").innerHTML =
+                "Ký tự '" + ch + "' xuất hiện " + kq + " lần.";
+        }
+    }
+</script>
+</body>
+</html>

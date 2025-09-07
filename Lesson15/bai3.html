@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vie">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>Chương trình tính giai thừa</h2>
+<label>Nhập số: </label>
+<input type="number" id="num" min="0">
+<button onclick="tinhGiaithua()">Tính</button>
+<p id="ketqua"></p>
+<script>
+    function factorial(n) {
+        let result = 1;
+        for (let i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+    function tinhGiaithua() {
+        let x = document.getElementById("num").value;
+        x = parseInt(x);
+        if (isNaN(x) || x < 0) {
+            document.getElementById("ketqua").innerHTML = "Vui lòng nhập số nguyên không âm!";
+        } else {
+            let kq = factorial(x);
+            document.getElementById("ketqua").innerHTML = x + "! = " + kq;
+        }
+    }
+</script>
+</body>
+</html>
+<!--Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào.-->
+<!--Gọi và kiểm tra hàm vừa viết.--

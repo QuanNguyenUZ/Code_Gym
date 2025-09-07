@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Nhập mảng số nguyên (cách nhau bằng dấu phẩy)</h2>
+<input type="text" id="arrayInput">
+<button onclick="daoNguoc()">Đảo ngược</button>
+<p id="ketqua"></p>
+<script>
+    function reverseArray(arr) {
+        let newArr = [];
+        for (let i = arr.length - 1; i >= 0; i--) {
+            newArr.push(arr[i]);
+        }
+        return newArr;
+    }
+    function daoNguoc() {
+        let input = document.getElementById("arrayInput").value;
+        let arr = input.split(",").map(Number); // tách chuỗi thành mảng số
+        let kq = reverseArray(arr);
+        document.getElementById("ketqua").innerHTML = "Mảng đảo ngược: [" + kq.join(", ") + "]";
+    }
+</script>
+</body>
+</html>
+<!--Viết hàm nhận vào một mảng số nguyên bất kỳ và đảo ngược mảng đó.-->

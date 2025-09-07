@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Kiểm tra ký tự có phải số không</h2>
+<label>Nhập một ký tự: </label>
+<input type="text" id="charInput" maxlength="1">
+<button onclick="kiemTra()">Kiểm tra</button>
+<p id="ketqua"></p>
+<script>
+    function isDigit(ch) {
+        if (ch >= '0' && ch <= '9') {
+            return true;
+        }
+        return false;
+    }
+    function kiemTra() {
+        let c = document.getElementById("charInput").value;
+        let kq = isDigit(c);
+        document.getElementById("ketqua").innerHTML = "Kết quả: " + kq;
+    }
+</script>
+</body>
+</html>
