@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function hocsinh(id, ten, diachi){
+        this.id = id;
+        this.ten = ten;
+        this.diachi = diachi;
+        this.thongtin = function (){
+            return "id=" + this.id + " Ten" + this.ten + " Diachi"+this.diachi;
+        }
+    }
+    var hocSinh = new hocsinh(1, "A", "b");
+    console.log(hocSinh.thongtin());
+
+    // function Student(id, name, address){
+    //     this.id = id;
+    //     this.name = name;
+    //     this.address = address;
+    //     this.getInfor = function(){
+    //         return "Id=" + this.id + " Name=" + this.name + " Address=" + this.address;
+    //     }
+    // }
+    // var student = new Student(1, "Nguyen van A", "vietnam")
+    // console.log(student.getInfor());
+</script>
+</body>
+</html>

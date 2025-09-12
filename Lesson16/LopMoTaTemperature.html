@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Kết quả chuyển đổi nhiệt độ</h2>
+<div id="result"></div>
+<script>
+    class Temperature {
+        constructor(doC) {
+            if (doC < -273) {
+                alert("Nhiệt độ không thể nhỏ hơn -273°C");
+                this.doC = -273;
+            } else {
+                this.doC = doC;
+            }
+        }
+        doisangdoF() {
+            return (this.doC * 9 / 5) + 32; //công thức đổi nhiệt độ từ độ C → độ F
+        }
+
+        doisangdoK() {
+            return this.doC + 273;
+        }
+    }
+    let nhietdo = new Temperature(40);
+    let f = nhietdo.doisangdoF();
+    let k = nhietdo.doisangdoK();
+    document.getElementById("result").innerHTML ="Nhiệt độ: "+ nhietdo.doC + "°C"
+        +"<br>Độ F: " + f + "°F"
+        +"<br>Độ K: "+ k + "°K";
+</script>
+</body>
+</html>

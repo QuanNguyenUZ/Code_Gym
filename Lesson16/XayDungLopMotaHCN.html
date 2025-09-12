@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Mô phỏng hình chữ nật</h2>
+<canvas id="myCanvas" width="400" height="200" style="border:1px solid #000"></canvas>
+<p id ="info"></p>
+<script>
+    class Rectangle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+        getArea() {
+            return this.length * this.width;
+        }
+        getPerimeter() {
+            return 2 * (this.length + this.width);
+        }
+        draw(canvasId) {
+            const canvas = document.getElementById(canvasId);
+                const ctx = canvas.getContext("2d");
+                ctx.fillStyle = "lightblue";
+                ctx.fillRect(50, 50, this.length, this.width);
+                ctx.strokeRect(50, 50, this.length, this.width);
+            }
+    }
+    let rect = new Rectangle(180, 80);
+    function showInfo() {
+        document.getElementById("info").innerHTML =
+            "Chiều dài: " + rect.length +
+            ", Chiều rộng: " + rect.width +
+            "<br>Diện tích: " + rect.getArea() +
+            "<br>Chu vi: " + rect.getPerimeter();
+    }
+    rect.draw("myCanvas");
+    showInfo();
+</script>
+</body>
+</html>
+<!--Viết một lớp đối tượng Rectangle để mô tả hình chữ nhật, với các đặc tính sau:-->
+<!--Thuộc tính:-->
+<!--Chiều dài (length - kiểu int).-->
+<!--Chiều rộng (width - kiểu int).-->
+<!--Phương thức:-->
+<!--Tính diện tích hình chữ nhật.-->
+<!--Tính chu vi hình chữ nhật.-->
+<!--Hiển thị trực quan hình chữ nhật bằng cách vẽ lên canvas.-->
